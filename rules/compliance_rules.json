@@ -1,0 +1,52 @@
+{
+  "schema_version": "4.0.0",
+  "framework": "Axiomatic-Ontological-Intelligence",
+  "ruleset_id": "CAI-COMPLIANCE-01",
+  "constraints": [
+    {
+      "rule_id": "RULE_EXISTS_BOUND_01",
+      "description": "Ensure variable allocation adheres to verified bounded domain constraints.",
+      "expression": {
+        "type": "Exists",
+        "variable": "y",
+        "domain": {
+          "start": 0,
+          "stop": 15,
+          "step": 1
+        },
+        "formula": {
+          "type": "And",
+          "left": {
+            "type": "LessEqual",
+            "left": {
+              "type": "Add",
+              "left": {
+                "type": "Variable",
+                "name": "x"
+              },
+              "right": {
+                "type": "Variable",
+                "name": "y"
+              }
+            },
+            "right": {
+              "type": "Constant",
+              "value": 20
+            }
+          },
+          "right": {
+            "type": "LessEqual",
+            "left": {
+              "type": "Constant",
+              "value": 0
+            },
+            "right": {
+              "type": "Variable",
+              "name": "y"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
