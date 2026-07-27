@@ -5,7 +5,7 @@ import traceback
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 # Import your core logic modules
-from src.core.wad_wrapper import WADWrapper 
+from src.core.wad_wrapper import wad_wrapper
 from safety.omega_protocol import OmegaProtocol 
 
 # Configure logging for maximum observability
